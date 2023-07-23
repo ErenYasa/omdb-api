@@ -1,0 +1,52 @@
+/* colors */
+$c_primary: #f7f9fd;
+$c_secondary: #6182f7;
+$c_dark: #000000;
+$c_light: #ffffff;
+$c_gray: #9b9b9b;
+$c_gray_secondary: #f0eef2;
+
+/* radius */
+$radius: 12px;
+
+/* text size */
+$text-size: (
+    "small": 1.2rem,
+    "medium": 1.4rem,
+    "large": 1.8rem,
+);
+
+/* breakpoints */
+$grid-breakpoints: (
+    "xs": 0,
+    "sm": 640px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1280px,
+    "xxl": 1536px,
+);
+
+$container-max-widths: (
+    "sm": 640px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1280px,
+    "xxl": 1536px,
+);
+
+// grid system
+$grid-columns: 12;
+$grid-gaps: (
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px,
+);
+
+/* font-weight */
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 600;
+
+
