@@ -1,0 +1,62 @@
+@mixin xs() {
+    @media (min-width: map-get($grid-breakpoints, "xs")) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (min-width: map-get($grid-breakpoints, "sm")) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: map-get($grid-breakpoints, "md")) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: map-get($grid-breakpoints, "lg")) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: map-get($grid-breakpoints, "xl")) {
+        @content;
+    }
+}
+
+@mixin xxl {
+    @media (min-width: map-get($grid-breakpoints, "xxl")) {
+        @content;
+    }
+}
+
+@mixin xxxl {
+    @media (min-width: map-get($grid-breakpoints, "xxxl")) {
+        @content;
+    }
+}
+
+@mixin lineclamp($lines: 2, $lineHeight: undefined) {
+    display: -webkit-box;
+    display: -moz-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    line-clamp: $lines;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @if $lineHeight {
+        max-height: $lineHeight * $lines * 1px;
+    }
+}
+
+@mixin line-height($fontSize, $lineHeightPx) {
+    line-height: $lineHeightPx / $fontSize;
+}
+
+
