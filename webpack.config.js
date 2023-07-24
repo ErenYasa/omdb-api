@@ -5,7 +5,12 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     entry: {
-        common: ['./src/js/common.js', './src/js/router.js'],
+        common: [
+            './src/js/common.js',
+            './src/js/services/localStorageService.js',
+            './src/js/services/apiService.js',
+        ],
+        route: './src/js/router.js',
     },
     output: {
         filename: '[name].[chunkhash].js',
@@ -58,6 +63,45 @@ module.exports = {
                 ignoreCustomFragments: [/{{[\s\S]*?}}/],
             },
         }),
+        new HtmlWebpackPlugin({
+            filename: '404.html',
+            template: './src/pages/404.html',
+            inject: false,
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeCommentsFromCDATA: true,
+                minifyJS: false,
+                minifyCSS: false,
+                ignoreCustomFragments: [/{{[\s\S]*?}}/],
+            },
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'listing.html',
+            template: './src/pages/listing.html',
+            inject: false,
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeCommentsFromCDATA: true,
+                minifyJS: false,
+                minifyCSS: false,
+                ignoreCustomFragments: [/{{[\s\S]*?}}/],
+            },
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'search.html',
+            template: './src/pages/search.html',
+            inject: false,
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeCommentsFromCDATA: true,
+                minifyJS: false,
+                minifyCSS: false,
+                ignoreCustomFragments: [/{{[\s\S]*?}}/],
+            },
+        }),
         new MiniCssExtractPlugin({
             filename: 'main.css',
         }),
@@ -65,6 +109,11 @@ module.exports = {
             host: 'localhost',
             port: 3010,
             server: { baseDir: ['dist'] },
+            middleware(req, res, next) {
+                if (req.url === '/listing') req.url = '/index.html';
+                if (req.url === '/') req.url = '/index.html';
+                return next();
+            },
         }),
     ],
 };
