@@ -36,6 +36,7 @@
                 "ignoreReadBeforeAssign": true
             }
         ],
-        "curly": ["error", "multi-or-nest"]
+        "curly": ["error", "multi-or-nest"],
+        "func-names": 0
     }
 }

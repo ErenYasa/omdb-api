@@ -16,12 +16,6 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Reapply the pointer cursor for anchor tags */
-a,
-button {
-    cursor: revert;
-}
-
 /* Remove list styles (bullets/numbers) */
 ol,
 ul,
@@ -33,6 +27,7 @@ menu {
 img {
     max-inline-size: 100%;
     max-block-size: 100%;
+    height: 100%;
 }
 
 /* removes spacing between cells in tables */
@@ -44,6 +39,7 @@ table {
 input,
 textarea {
     user-select: auto;
+    font-size: inherit;
 }
 
 /* revert the 'white-space' property for textarea elements on Safari */
@@ -116,11 +112,35 @@ a {
 
 button,
 a,
+input[type="submit"],
+input[type="button"] {
+    cursor: pointer;
+}
+
+button,
+a,
 input {
     outline: none;
-    cursor: pointer;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+input[type="text"] {
+    border: none;
 }
 
 a {
     color: #000;
+}
+
+[hidden] {
+    display: none !important;
 }

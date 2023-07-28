@@ -1,0 +1,13 @@
+.my-favorite-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    width: max-content;
+    margin-inline: auto;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    border: 0.1rem solid $c_gray_secondary;
+    background-color: $c_light;
+}

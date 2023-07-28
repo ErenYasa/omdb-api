@@ -1,4 +1,4 @@
-@mixin xs() {
+@mixin xs {
     @media (min-width: map-get($grid-breakpoints, "xs")) {
         @content;
     }
@@ -40,7 +40,7 @@
     }
 }
 
-@mixin lineclamp($lines: 2, $lineHeight: undefined) {
+@mixin lineclamp($lines: 2, $lineHeight: false) {
     display: -webkit-box;
     display: -moz-box;
     -webkit-box-orient: vertical;
@@ -59,4 +59,35 @@
     line-height: $lineHeightPx / $fontSize;
 }
 
+@mixin visually-hidden() {
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 
+    &:not(caption) {
+        position: absolute !important;
+    }
+}
+
+@mixin visually-hidden-focusable() {
+    &:not(:focus):not(:focus-within) {
+        @include visually-hidden();
+    }
+}
+
+@mixin custom-mq($prop, $viewport) {
+    @media ($prop: $viewport) {
+        @content;
+    }
+}
+
+@mixin mq-range($min, $max) {
+    @media (min-width: '#{$min}px') and (max-width: '#{$max}px') {
+        @content;
+    }
+}
