@@ -1,10 +1,11 @@
 :root {
-    min-width: 320px;
+    min-width: 350px;
     font-family: "Poppins", sans-serif;
     line-height: 1.5;
     font-weight: 400;
     font-size: 62.5%;
-    color: $c-light;
+    color: $c_dark;
+    caret-color: $c_secondary;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -21,6 +22,32 @@ body {
     background-color: $c_primary;
 }
 
+::placeholder {
+    opacity: 0.3;
+}
+
 #root {
     height: 100%;
 }
+
+/* ICONS */
+.icon {
+    color: $c_secondary;
+
+    &--white {
+        color: $c_light;
+    }
+
+    &--black {
+        color: $c_dark;
+    }
+
+    #added-fav {
+        display: none;
+    }
+}
+
+.swiper-slide {
+    width: 100% !important;
+}
+

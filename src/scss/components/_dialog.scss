@@ -1,0 +1,49 @@
+dialog {
+    opacity: 0;
+    top: 100%;
+    width: 65rem;
+    max-height: calc(100% - 13rem);
+    border: 0;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    padding: 20px;
+    animation: fadeInTopModal 0.3s ease forwards;
+
+    &:nth-of-type(2) {
+        height: 77%;
+    }
+
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &[open] {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include sm {
+        top: 50%;
+        max-height: calc(100% - 35rem);
+        border-bottom-left-radius: $radius;
+        border-bottom-right-radius: $radius;
+    }
+
+    &.my-favorite-modal {
+        height: 100%;
+    }
+}
+
+@keyframes fadeInTopModal {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}

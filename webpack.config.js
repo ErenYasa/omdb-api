@@ -1,26 +1,27 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     entry: {
+        route: './src/js/router.js',
         common: [
             './src/js/common.js',
             './src/js/services/localStorageService.js',
             './src/js/services/apiService.js',
+            './src/js/pages/search.js',
+            './src/js/pages/listing.js',
         ],
-        route: './src/js/router.js',
     },
     output: {
-        filename: '[name].[chunkhash].js',
+        filename: '[name].js',
         path: `${__dirname}/dist`,
         clean: true,
     },
     module: {
         rules: [
             {
-                test: [/.js$/],
+                test: /.js$/,
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
@@ -105,15 +106,16 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'main.css',
         }),
-        new BrowserSyncPlugin({
-            host: 'localhost',
-            port: 3010,
-            server: { baseDir: ['dist'] },
-            middleware(req, res, next) {
-                if (req.url === '/listing') req.url = '/index.html';
-                if (req.url === '/') req.url = '/index.html';
-                return next();
-            },
-        }),
     ],
+    devServer: {
+        static: './dist',
+        port: 3010,
+        open: true,
+        hot: false,
+        liveReload: true,
+        historyApiFallback: true,
+        devMiddleware: {
+            writeToDisk: true,
+        },
+    },
 };

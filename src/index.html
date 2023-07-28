@@ -13,7 +13,7 @@
         <title>Omdbp-api</title>
     </head>
     <body>
-        <!-- #region svgs -->
+        <!-- #region SVGS -->
         <svg
             aria-hidden="true"
             style="position: absolute; width: 0; height: 0; overflow: hidden"
@@ -22,55 +22,99 @@
             xmlns:xlink="http://www.w3.org/1999/xlink"
         >
             <defs>
-                <symbol
-                    id="search"
-                    fill="currentColor"
-                    viewBox="2 2 20 20"
-                >
+                <symbol id="search" fill="currentColor" viewBox="2 2 20 20">
                     <path
                         d="M16.041 15.856c-0.034 0.026-0.067 0.055-0.099 0.087s-0.060 0.064-0.087 0.099c-1.258 1.213-2.969 1.958-4.855 1.958-1.933 0-3.682-0.782-4.95-2.050s-2.050-3.017-2.050-4.95 0.782-3.682 2.050-4.95 3.017-2.050 4.95-2.050 3.682 0.782 4.95 2.050 2.050 3.017 2.050 4.95c0 1.886-0.745 3.597-1.959 4.856zM21.707 20.293l-3.675-3.675c1.231-1.54 1.968-3.493 1.968-5.618 0-2.485-1.008-4.736-2.636-6.364s-3.879-2.636-6.364-2.636-4.736 1.008-6.364 2.636-2.636 3.879-2.636 6.364 1.008 4.736 2.636 6.364 3.879 2.636 6.364 2.636c2.125 0 4.078-0.737 5.618-1.968l3.675 3.675c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414z"
                     />
                 </symbol>
-                <symbol
-                    id="arrow"
-                    fill="currentColor"
-                    viewBox="99.62 -736.85 747.87 513.31"
-                >
+                <symbol id="arrow" fill="currentColor" viewBox="99.62 -736.85 747.87 513.31">
                     <path
                         d="M764.925-455.257H124.744q-10.852 0-17.99-7.142-7.137-7.141-7.137-17.999 0-10.858 7.137-17.986 7.138-7.128 17.99-7.128h640.181L575.769-694.616q-7.102-7.134-7.269-17.349-.166-10.214 7.269-17.717 7.103-7.164 17.436-7.164t17.563 7.231l227.308 227.307q4.948 4.949 7.179 10.282 2.231 5.334 2.231 11.693t-2.248 11.871q-2.249 5.513-7.162 10.385L610.768-230.77q-7.134 7.231-17.349 7.231-10.214 0-17.65-7.231-7.82-7.435-7.628-17.794.193-10.359 7.628-17.538l189.156-189.155Z"
                     ></path>
                 </symbol>
-                <symbol
-                    id="favorite"
-                    fill="currentColor"
-                    viewBox="0 0.78 32 30.43"
-                >
+                <symbol id="favorite-fill" fill="currentColor" viewBox="0 0.78 32 30.43">
                     <path
                         d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"
                     ></path>
                 </symbol>
-                <symbol
-                    id="double-arrow"
-                    fill="currentColor"
-                    viewBox="262.77 -750 501.38 540"
-                >
+                <symbol id="favorite" fill="currentColor" viewBox="0 0.78 32 30.43">
+                    <path
+                        d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798zM16 23.547l-6.983 3.671 1.334-7.776-5.65-5.507 7.808-1.134 3.492-7.075 3.492 7.075 7.807 1.134-5.65 5.507 1.334 7.776-6.983-3.671z"
+                    ></path>
+                </symbol>
+                <symbol id="double-arrow" fill="currentColor" viewBox="262.77 -750 501.38 540">
                     <path
                         d="M262.771-210.001 460.719-480 262.771-749.999h61.742L522.461-480 324.513-210.001h-61.742Zm241.692 0L702.411-480 504.463-749.999h61.742L764.153-480 566.205-210.001h-61.742Z"
+                    ></path>
+                </symbol>
+                <symbol
+                    id="close"
+                    viewBox="0 0 32 32"
+                    style="fill: none; stroke: currentcolor; stroke-width: 3; overflow: visible"
+                >
+                    <path d="m6 6 20 20"></path>
+                    <path d="m26 6-20 20"></path>
+                </symbol>
+                <symbol id="bookmark" fill="currentColor" viewBox="2 0 12 16">
+                    <path
+                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
+                    ></path>
+                    <path
+                        d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4z"
                     ></path>
                 </symbol>
             </defs>
         </svg>
         <!-- #endregion -->
-        <nav id="main-nav" class="sidebar">
-            <a href="/listing" onclick="route()">listing</a>
-        </nav>
-        <div id="root">
-            <!-- <div class="page-container search-page">
-                <svg class="icon icon-search" width="32" height="32">
-                    <use xlink:href="#search"></use>
+
+        <main id="root"></main>
+
+        <!-- #region COOKIE-BAR -->
+        <div class="cookie-banner">
+            <button type="button" class="cookie-banner__close-btn">
+                <svg class="icon icon--black" width="20" height="20">
+                    <use xlink:href="#close"></use>
                 </svg>
-                <svg class="icon icon-star-full"><use xlink:href="#icon-star-full"></use></svg>
-            </div> -->
+            </button>
+            <div class="cookie-banner__content">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512">
+                    <path
+                        d="M257.5 27.6c-.8-5.4-4.9-9.8-10.3-10.6c-22.1-3.1-44.6 .9-64.4 11.4l-74 39.5C89.1 78.4 73.2 94.9 63.4 115L26.7 190.6c-9.8 20.1-13 42.9-9.1 64.9l14.5 82.8c3.9 22.1 14.6 42.3 30.7 57.9l60.3 58.4c16.1 15.6 36.6 25.6 58.7 28.7l83 11.7c22.1 3.1 44.6-.9 64.4-11.4l74-39.5c19.7-10.5 35.6-27 45.4-47.2l36.7-75.5c9.8-20.1 13-42.9 9.1-64.9c-.9-5.3-5.3-9.3-10.6-10.1c-51.5-8.2-92.8-47.1-104.5-97.4c-1.8-7.6-8-13.4-15.7-14.6c-54.6-8.7-97.7-52-106.2-106.8zM208 144a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM144 336a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm224-64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                    />
+                </svg> -->
+                "Kişisel verilerin korunması hakkında aydınlatma metnimizdeki amaçlarla sınırlı ve
+                mevzuata uygun şekilde çerez konumlandırıyoruz. Detaylı bilgi için
+                <u>çerez politikamızı</u> ve
+                <u>kişisel verilen korunması hakkında bilgilendirme metnimizi</u>
+                inceleyebilirsiniz."
+            </div>
         </div>
+        <!-- #endregion -->
+
+        <!-- #region MODALS -->
+        <dialog class="modal my-favorite-modal">
+            <div class="actions">
+                <button type="button" class="close-modal">
+                    <svg class="icon icon--black" width="20" height="20">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <button data-targetmodal="test">test</button>
+            </div>
+            <div class="modal-body">Favorilere eklediğiniz filmler aşağıda listelenmektedir.</div>
+        </dialog>
+
+        <dialog class="modal bookmark-modal">
+            <div class="actions">
+                <button type="button" class="close-modal">
+                    <svg class="icon icon--black" width="20" height="20">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <button data-targetmodal="test">test</button>
+            </div>
+            <div class="modal-body">Favorilere eklediğiniz filmler aşağıda listelenmektedir.</div>
+        </dialog>
+        <!-- #endregion -->
     </body>
 </html>

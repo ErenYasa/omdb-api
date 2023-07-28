@@ -1,3 +1,7 @@
+import Common from './common';
+import Listing from './pages/listing';
+import Search from './pages/search';
+
 const routes = {
     404: './404.html',
     '/': './search.html',
@@ -7,14 +11,36 @@ const routes = {
 const handleLocation = async () => {
     const path = window.location.pathname;
     const page = routes[path] || routes[404];
+
     const html = await fetch(page).then(data => data.text());
     document.getElementById('root').innerHTML = html;
+
+    Common();
+    switch (path) {
+        case '/listing':
+            Listing();
+            break;
+        case '/':
+            Search();
+            break;
+        default:
+            break;
+    }
 };
 
-const route = event => {
+const route = (event, path, queryParam) => {
     event = event || window.event;
     event.preventDefault();
-    window.history.pushState({}, '', event.target.href);
+    const queryString = new URLSearchParams(window.location.search);
+
+    if (queryParam) queryString.set(queryParam.name, queryParam.value);
+
+    window.history.pushState(
+        {},
+        '',
+        `${event.target.baseURI}${path}${queryParam ? `?${queryString}` : ''}`,
+    );
+
     handleLocation();
 };
 
