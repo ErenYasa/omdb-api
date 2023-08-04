@@ -12,16 +12,12 @@
 
 .header {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     width: 100%;
     max-width: 57rem;
     height: max-content;
     margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    padding-inline: 2rem;
-    border-bottom: 0.1rem solid $c_secondary;
 
     @include sm {
         padding-inline: 4rem;
@@ -31,14 +27,35 @@
         max-width: 65rem;
     }
 
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        width: 100%;
+        padding-inline: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 0.1rem solid $c_secondary;
+    }
+
     &__search__result {
+        margin-right: 3rem;
         color: $c_secondary;
         @include lineclamp;
+
+        .result {
+            display: inline-block;
+        }
     }
 
     &__total__count {
+        display: flex;
+        flex-wrap: wrap;
         color: $c_gray;
     }
+
+
 }
 
 .film-cards-container {
@@ -54,11 +71,19 @@
     }
 
     .film-cards-column {
-        // &:not(:first-of-type) {
-        //     border-top: 0.2rem solid $c_gray_secondary;
-        // }
+        &:not(:nth-of-type(1)) {
+            border-top: 0.2rem solid $c_gray_secondary;
+        }
 
         @include lg {
+            &:not(:nth-of-type(1)) {
+                border-top: none;
+            }
+
+            &:not(:nth-of-type(-n + 2)) {
+                border-top: 0.2rem solid $c_gray_secondary;
+            }
+
             @include column(6);
         }
     }

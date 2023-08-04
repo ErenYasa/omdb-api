@@ -1,0 +1,104 @@
+#bookmark-calendar {
+    .bookmark-view * {
+        border: none;
+    }
+
+    .fc-toolbar-title {
+        font-size: map-get($text-size, "l");
+    }
+
+    .fc-prev-button,
+    .fc-next-button {
+        border: 0;
+        color: $c_dark;
+        background-color: transparent;
+    }
+
+    .fc-today-button {
+        @include btn;
+        opacity: 1;
+        width: 100%;
+        max-height: 3.5rem;
+        margin-top: 0.5rem;
+        border-radius: map-get($radius, "s");
+        color: $c_dark;
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.3;
+        }
+    }
+
+    .fc-scroller-harness {
+        overflow: visible !important;
+
+        * {
+            overflow: visible !important;
+        }
+    }
+
+    .fc-col-header tr {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(5.5rem, 6.6rem));
+        column-gap: 3%;
+        row-gap: 10%;
+        cursor: grab;
+
+        @include sm {
+            grid-template-columns: repeat(auto-fill, minmax(5.5rem, 7.6rem));
+        }
+    }
+
+    .fc-col-header {
+        width: 100% !important;
+    }
+
+    .bookmark-date {
+        border: 0.1rem solid $c_gray_secondary;
+        border-radius: map-get($radius, "m");
+        cursor: pointer;
+
+        a {
+            display: flex;
+            justify-content: center;
+            width: min-content;
+            margin-inline: auto;
+            padding: 0.6rem 1rem;
+
+            @include sm {
+                padding-block: 1rem;
+            }
+        }
+
+        &.active {
+            background-color: $c_secondary !important;
+
+            a {
+                color: $c_light !important;
+            }
+        }
+
+        .fc-day-today {
+            background-color: $c_secondary !important;
+        }
+    }
+
+    tbody[role="presentation"] {
+        display: none !important;
+        height: 3rem !important;
+
+        & * {
+            height: 3rem !important;
+        }
+    }
+
+    .fc-addFilm-button {
+        @include btn;
+        border-radius: map-get($radius, "s");
+        color: $c_dark;
+
+        &:hover {
+            border-color: $c_dark;
+        }
+    }
+}

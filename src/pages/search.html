@@ -4,7 +4,7 @@
             <input
                 type="text"
                 class="search__bar__input"
-                placeholder="Bulmak istediğiniz filmin adını yazınız"
+                placeholder="Hangi filmi arıyorsun?"
             />
             <button type="button" class="search__bar__btn">
                 <svg class="icon icon--search" width="36" height="36">
@@ -16,142 +16,7 @@
             </button>
         </div>
         <div class="search__suggestions">
-            <div class="suggestions__list">
-                <div class="film-card">
-                    <div class="film-card__head">
-                        <button type="button" class="film-card__favorite-btn">
-                            <svg class="icon icon--white" width="28" height="28">
-                                <use id="not-added-fav" xlink:href="#favorite"></use>
-                                <use id="added-fav" xlink:href="#favorite-fill"></use>
-                            </svg>
-                        </button>
-                        <button type="button" class="film-card__bookmark-btn" data-targetmodal="bookmark-modal">
-                            <svg class="icon icon--white" width="24" height="24">
-                                <use xlink:href="#bookmark"></use>
-                            </svg>
-                        </button>
-                        <img
-                            src="https://m.media-amazon.com/images/M/MV5BNGVjYzBhNmYtMzA1NS00NmJkLTg2YTctNmVkOTM4YzViNzQyXkEyXkFqcGdeQXVyNjIxNDU5NTg@._V1_SX300.jpg"
-                            class="film-card__head__img"
-                            alt="a film"
-                        />
-                    </div>
-                    <div class="film-card__body">
-                        <div>
-                            <div class="film-card__title">The TRON: Legacy (2010)</div>
-                            <div class="film-card__rating">
-                                <svg class="icon" width="13" height="13">
-                                    <use xlink:href="#favorite-fill"></use>
-                                </svg>
-                                <div class="rating__text">
-                                    <div class="rating__current">6.8</div>
-                                    <div class="rating__out_of">/10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="film-card__specs">
-                            <div class="card__spec">
-                                <div class="spec__key">Dil:</div>
-                                <div class="spec__value">İngilizce</div>
-                            </div>
-                            <div class="card__spec card__spec--actors">
-                                <div class="spec__key">Oyuncular:</div>
-                                <div class="spec__value">
-                                    <div class="spec__value__text">
-                                        Jeff Bridges, Garrett Hedlund, Olivia Wilde |
-                                        <button type="button" class="value__text__btn">
-                                            Tüm listeyi gör
-                                            <svg width="7" height="7">
-                                                <use xlink:href="#double-arrow"></use>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="film-card__explain">
-                            <div class="film-card__explain__text">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-                                volutpat. Ut wisi enim ad ad minim veniam, quis nostrud exerci tation
-                            </div>
-                            <button type="button" class="film-card__explain__btn">
-                                Detaylar
-                                <svg width="7" height="7">
-                                    <use xlink:href="#double-arrow"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="film-card">
-                    <div class="film-card__head">
-                        <button type="button" class="film-card__favorite-btn">
-                            <svg class="icon icon--white" width="28" height="28">
-                                <use id="not-added-fav" xlink:href="#favorite"></use>
-                                <use id="added-fav" xlink:href="#favorite-fill"></use>
-                            </svg>
-                        </button>
-                        <button type="button" class="film-card__bookmark-btn" data-targetmodal="bookmark-modal">
-                            <svg class="icon icon--white" width="24" height="24">
-                                <use xlink:href="#bookmark"></use>
-                            </svg>
-                        </button>
-                        <img
-                            src="https://m.media-amazon.com/images/M/MV5BNGVjYzBhNmYtMzA1NS00NmJkLTg2YTctNmVkOTM4YzViNzQyXkEyXkFqcGdeQXVyNjIxNDU5NTg@._V1_SX300.jpg"
-                            class="film-card__head__img"
-                            alt="a film"
-                        />
-                    </div>
-                    <div class="film-card__body">
-                        <div>
-                            <div class="film-card__title">The TRON: Legacy (2010)</div>
-                            <div class="film-card__rating">
-                                <svg class="icon" width="13" height="13">
-                                    <use xlink:href="#favorite-fill"></use>
-                                </svg>
-                                <div class="rating__text">
-                                    <div class="rating__current">6.8</div>
-                                    <div class="rating__out_of">/10</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="film-card__specs">
-                            <div class="card__spec">
-                                <div class="spec__key">Dil:</div>
-                                <div class="spec__value">İngilizce</div>
-                            </div>
-                            <div class="card__spec card__spec--actors">
-                                <div class="spec__key">Oyuncular:</div>
-                                <div class="spec__value">
-                                    <div class="spec__value__text">
-                                        Jeff Bridges, Garrett Hedlund, Olivia Wilde |
-                                        <button type="button" class="value__text__btn">
-                                            Tüm listeyi gör
-                                            <svg width="7" height="7">
-                                                <use xlink:href="#double-arrow"></use>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="film-card__explain">
-                            <div class="film-card__explain__text">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-                                volutpat. Ut wisi enim ad ad minim veniam, quis nostrud exerci tation
-                            </div>
-                            <button type="button" class="film-card__explain__btn">
-                                Detaylar
-                                <svg width="7" height="7">
-                                    <use xlink:href="#double-arrow"></use>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="suggestions__list"></div>
             <button type="button" class="suggestions__btn">
                 MORE RESULT
                 <svg width="10" height="10">
@@ -159,11 +24,11 @@
                 </svg>
             </button>
         </div>
-        <button type="button" class="my-favorite-btn" data-targetmodal="my-favorite-modal">
+        <button type="button" class="my-favorite-btn" data-targetmodal="my-favorites-modal">
             <svg class="icon" width="20" height="20">
                 <use xlink:href="#favorite-fill"></use>
             </svg>
-            My favorites
+            Favorilerim
         </button>
     </div>
 </div>

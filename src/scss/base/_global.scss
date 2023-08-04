@@ -4,6 +4,7 @@
     line-height: 1.5;
     font-weight: 400;
     font-size: 62.5%;
+    scroll-behavior: smooth;
     color: $c_dark;
     caret-color: $c_secondary;
     font-synthesis: none;
@@ -22,6 +23,12 @@ body {
     background-color: $c_primary;
 }
 
+body {
+    &.lock {
+        overflow: hidden;
+    }
+}
+
 ::placeholder {
     opacity: 0.3;
 }
@@ -36,6 +43,7 @@ body {
 
     &--white {
         color: $c_light;
+        filter: drop-shadow(0px 0px 0.5rem black);
     }
 
     &--black {
@@ -47,7 +55,60 @@ body {
     }
 }
 
-.swiper-slide {
-    width: 100% !important;
+// LOADER
+$loaderDotWidth: 1.2rem;
+@mixin dotSpinner {
+    content: "";
+    position: absolute;
+    opacity: 1;
+    width: $loaderDotWidth;
+    height: $loaderDotWidth;
+    border-radius: 100%;
+    background: transparent;
+    animation: spinner 0.3s ease-in-out alternate infinite;
 }
 
+.loader-spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    &__dots-wrapper {
+        width: 4rem;
+        height: 1rem;
+    }
+
+    .dot-spinner {
+        @include dotSpinner;
+        top: 50%;
+        left: 50%;
+        margin: -0.5rem 0 0 -0.5rem;
+        animation-delay: 0.1s;
+
+        &:before {
+            @include dotSpinner;
+            left: -1.5rem;
+            animation-delay: 0s;
+        }
+
+        &:after {
+            right: -1.5rem;
+            animation-delay: 0.2s;
+            @include dotSpinner;
+        }
+    }
+}
+
+@keyframes spinner {
+    0% {
+        background: transparent;
+    }
+    100% {
+        background: $c_secondary;
+    }
+}
