@@ -1,0 +1,44 @@
+@mixin btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    width: max-content;
+    margin-inline: auto;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    border: 0.1rem solid $c_gray_secondary;
+    background-color: $c_light;
+}
+
+.my-favorite-btn {
+    position: absolute;
+    top: 7.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    @include btn;
+}
+
+.header__button {
+    @include btn;
+    margin-inline: unset;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: map-get($radius, "m");
+    border-color: $c_gray_secondary;
+    background-color: $c_secondary;
+    color: $c_light;
+
+    &:hover {
+        background-color: $c_secondary_dark;
+    }
+
+    @include sm {
+        padding-block: 1rem;
+    }
+}
+
+.not-found-page__button {
+    @extend .header__button;
+}

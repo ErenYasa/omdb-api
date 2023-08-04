@@ -1,0 +1,12 @@
+.not-found-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+
+    &__title {
+        font-size: map-get($text-size, "l");
+        font-weight: $fw-medium;
+    }
+}

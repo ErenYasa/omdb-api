@@ -1,0 +1,97 @@
+.listing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding-top: 5rem;
+
+    @include sm {
+        padding-top: 6rem;
+    }
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 57rem;
+    height: max-content;
+    margin-bottom: 2rem;
+
+    @include sm {
+        padding-inline: 4rem;
+    }
+
+    @include md {
+        max-width: 65rem;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        width: 100%;
+        padding-inline: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 0.1rem solid $c_secondary;
+    }
+
+    &__search__result {
+        margin-right: 3rem;
+        color: $c_secondary;
+        @include lineclamp;
+
+        .result {
+            display: inline-block;
+        }
+    }
+
+    &__total__count {
+        display: flex;
+        flex-wrap: wrap;
+        color: $c_gray;
+    }
+
+
+}
+
+.film-cards-container {
+    @include containerClass("xl");
+    @include row;
+
+    @include md {
+        justify-content: center;
+    }
+
+    @include lg {
+        justify-content: unset;
+    }
+
+    .film-cards-column {
+        &:not(:nth-of-type(1)) {
+            border-top: 0.2rem solid $c_gray_secondary;
+        }
+
+        @include lg {
+            &:not(:nth-of-type(1)) {
+                border-top: none;
+            }
+
+            &:not(:nth-of-type(-n + 2)) {
+                border-top: 0.2rem solid $c_gray_secondary;
+            }
+
+            @include column(6);
+        }
+    }
+}
+
+.film-card__head {
+    @include xl {
+        max-width: unset;
+        min-width: unset;
+    }
+}

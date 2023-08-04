@@ -1,0 +1,138 @@
+.search {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1 1 auto;
+    max-width: 57rem;
+
+    @include md {
+        max-width: 65rem;
+    }
+
+    &.barFocused {
+        .icon--search {
+            display: none;
+        }
+        .icon--arrow {
+            display: block;
+        }
+    }
+
+    &__bar {
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 6rem;
+        max-height: 6rem;
+        padding-right: 2rem;
+        border-radius: map-get($radius, "l");
+        border: 0.1rem solid $c_gray_secondary;
+        background-color: $c_light;
+
+        @include sm {
+            max-height: 5.5rem;
+            padding-right: 3rem;
+        }
+
+        &__input {
+            width: 100%;
+            padding: 1.725rem 2rem;
+
+            @include sm {
+                padding-inline: 3rem;
+            }
+        }
+
+        &__btn {
+            display: flex;
+
+            .icon--arrow {
+                display: none;
+            }
+        }
+    }
+
+    &__suggestions {
+        position: relative;
+        z-index: 1;
+        display: none;
+        flex-direction: column;
+        border-radius: map-get($radius, "l");
+        background-color: $c_light;
+        border: 0.1rem solid $c_gray_secondary;
+        height: 100%;
+
+        /* ARROW */
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 20%;
+            margin-left: -2.2rem;
+            border-block-width: 2.2rem;
+            border-inline-width: 1.5rem;
+            border-style: solid;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+
+            @include sm {
+                left: 10%;
+            }
+        }
+
+        &::before {
+            z-index: 1;
+            margin-bottom: -0.1rem;
+            border-bottom-color: $c_light;
+        }
+
+        &::after {
+            margin-bottom: 0.1rem;
+            border-bottom-color: $c_gray_secondary;
+        }
+
+        @include sm {
+            height: unset;
+        }
+
+        &.active {
+            display: flex;
+        }
+
+        .suggestions__list {
+            position: relative;
+            padding-inline: 1.5rem;
+
+            @include sm {
+                height: 63.25rem;
+            }
+
+            .film-card {
+                &:not(:first-of-type) {
+                    border-top: 0.1rem solid $c_gray_secondary;
+                }
+            }
+        }
+
+        .suggestions__btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            height: 6rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: $fw-bold;
+            color: $c_secondary;
+            border-top: 0.1rem solid $c_gray_secondary;
+
+            @include sm {
+                height: 8rem;
+            }
+        }
+    }
+}

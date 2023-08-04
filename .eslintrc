@@ -1,0 +1,46 @@
+{
+  "extends": ["airbnb-base", "prettier"],
+  "plugins": ["prettier"],
+  "globals": {
+    "document": false
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "ignorePatterns": ["**/dist/**/*.js"],
+  "rules": {
+    "prettier/prettier": 0,
+    "import/no-dynamic-require": 0,
+    "import/prefer-default-export": 0,
+    "global-require": "off",
+    "no-console": [1, { "allow": ["warn", "error"] }],
+    "no-plusplus": 0,
+    "no-unused-vars": 1,
+    "no-tabs": 1,
+    "no-promise-executor-return": 0,
+    "no-async-promise-executor": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "camelcase": 0,
+    "no-param-reassign": "off",
+    "no-nested-ternary": "off",
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": true
+      }
+    ],
+    "curly": ["error", "multi-or-nest"],
+    "func-names": 0,
+    "array-callback-return": 0,
+    "no-underscore-dangle": 0,
+    "no-alert": 0,
+    "import/no-cycle": 0
+  }
+}

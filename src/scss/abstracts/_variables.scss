@@ -1,0 +1,58 @@
+/* colors */
+$c_primary: #f7f9fd;
+$c_secondary: #6182f7;
+$c_secondary_dark: #3c64f4;
+$c_dark: #000000;
+$c_light: #ffffff;
+$c_gray: #9b9b9b;
+$c_gray_secondary: #f0eef2;
+$c_success: #48b89c;
+$c_error: #f67971;
+
+/* radius */
+$radius: (
+    "s": 0.5rem,
+    "m": 0.8rem,
+    "l": 1.2rem,
+);
+
+/* text size */
+$text-size: (
+    "s": 1.2rem,
+    "m": 1.4rem,
+    "l": 1.8rem,
+);
+
+/* font-weight */
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 600;
+
+/* breakpoints */
+$grid-breakpoints: (
+    "xs": 0,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1280px,
+    "xxl": 1536px,
+);
+
+$container-max-widths: (
+    "sm": 576px,
+    "md": 768px,
+    "lg": 1024px,
+    "xl": 1280px,
+    "xxl": 1536px,
+);
+
+/* grid system */
+$grid-columns: 12;
+
+$grid-gaps: (
+    0: 0,
+    1: 1rem,
+    2: 2rem,
+    3: 3rem,
+);

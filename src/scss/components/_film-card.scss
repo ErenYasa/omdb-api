@@ -1,0 +1,186 @@
+.film-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 70rem;
+    padding-block: 3rem;
+
+    @include sm {
+        flex-direction: row;
+    }
+
+    &__remove-btn {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.2rem;
+        display: flex;
+    }
+
+    &__head {
+        position: relative;
+        width: 100%;
+        max-width: 20.4rem;
+        height: auto;
+        aspect-ratio: 11/17;
+        margin-inline: auto;
+        background-color: $c_gray_secondary;
+
+        @include sm {
+            max-width: 15.4rem;
+            min-width: 15.4rem;
+        }
+
+        .film-card__favorite-btn {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            display: flex;
+            padding-bottom: 1rem;
+            padding-left: 1rem;
+
+            &.active {
+                #added-fav {
+                    display: block;
+                }
+
+                #not-added-fav {
+                    display: none;
+                }
+            }
+
+            &disabled {
+                pointer-events: none;
+            }
+        }
+
+        .film-card__bookmark-btn {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            display: flex;
+            padding-bottom: 1rem;
+            padding-right: 1rem;
+        }
+
+        &__gradiant {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5.5rem;
+            background: rgb(0, 0, 0);
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.47524947478991597) 29%,
+                rgba(0, 0, 0, 0.5424763655462185) 61%,
+                rgba(0, 0, 0, 1) 100%
+            );
+        }
+
+        &__img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.5rem;
+
+        @include sm {
+            padding-right: 3rem;
+        }
+
+        .film-card__title {
+            font-size: 2rem;
+        }
+
+        .film-card__rating {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+
+            .rating__text {
+                display: flex;
+                line-height: 1;
+            }
+
+            .rating__current {
+                font-size: 2rem;
+                color: $c_secondary;
+            }
+
+            .rating__out_of {
+                display: flex;
+                align-items: flex-end;
+                margin-bottom: 0.3rem;
+                font-size: 1.2rem;
+                color: $c_gray;
+            }
+        }
+
+        .film-card__specs {
+            font-size: map-get($text-size, "m");
+
+            .card__spec {
+                position: relative;
+                display: flex;
+                gap: 0.5rem;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 0.2rem;
+                }
+            }
+
+            .spec__key {
+                font-weight: $fw-medium;
+            }
+
+            .spec__value {
+                &__text {
+                    @include lineclamp;
+
+                    .value__text__btn {
+                        white-space: nowrap;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .card__spec--actors {
+                position: relative;
+
+                .spec__key {
+                    position: absolute;
+                }
+
+                .spec__value {
+                    text-indent: 8rem;
+                }
+            }
+        }
+
+        .film-card__explain {
+            font-size: map-get($text-size, "m");
+
+            @include lg {
+                margin-bottom: 0.5em;
+            }
+
+            &__text {
+                @include lineclamp(3);
+            }
+
+            &__btn {
+                white-space: nowrap;
+                text-decoration: underline;
+            }
+        }
+    }
+}
