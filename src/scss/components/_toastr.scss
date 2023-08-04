@@ -1,0 +1,50 @@
+.toast-msg {
+    visibility: hidden;
+    position: fixed;
+    bottom: 3rem;
+    left: 50%;
+    z-index: 3;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 40rem;
+    min-width: 25rem;
+    padding: 1.6rem;
+    font-size: 1.7rem;
+    text-align: center;
+    color: $c_light;
+    border-radius: map-get($radius, "l");
+    background-color: $c_success;
+
+    &.error {
+        background-color: $c_error;
+    }
+
+    &.show {
+        visibility: visible;
+        animation:
+            fadein 0.5s,
+            fadeout 0.5s 2.5s;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 3rem;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 3rem;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,107 @@
+dialog {
+    opacity: 0;
+    top: 100%;
+    width: 70rem;
+    height: 100%;
+    max-height: calc(100% - 13rem);
+    /* FOR SAFARI */
+    margin-inline: auto;
+    /*  */
+    padding: 2rem;
+    border: 0;
+    border-top-left-radius: map-get($radius, "l");
+    border-top-right-radius: map-get($radius, "l");
+    outline: none;
+    animation: fadeInTopModal 0.3s ease forwards;
+
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &[open] {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    @include sm {
+        top: 50%;
+        max-height: calc(100% - 35rem);
+        border-bottom-left-radius: map-get($radius, "l");
+        border-bottom-right-radius: map-get($radius, "l");
+    }
+
+    .actions {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+
+        .close-modal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem;
+            border-radius: map-get($radius, "l");
+            border: 0.1rem solid $c_gray_secondary;
+            background-color: $c_light;
+
+            &:hover {
+                border-color: $c_dark;
+            }
+        }
+    }
+
+    .modal-body__title {
+        font-size: 1.8rem;
+    }
+
+    .modal-body__content {
+        margin-top: 2rem;
+    }
+}
+
+.my-favorites-modal {
+    .modal-body__content {
+        .film-card {
+            &:not(:first-of-type) {
+                border-top: 0.1rem solid $c_gray_secondary;
+            }
+        }
+    }
+}
+
+.bookmark-modal {
+    @include sm {
+        margin-top: 1rem;
+    }
+
+    .bookmark-films-container {
+        position: relative;
+        min-height: 15rem;
+        margin-top: 2rem;
+        border-top: 0.1rem solid $c_gray_secondary;
+    }
+
+    .film-card {
+        &__head {
+            @include sm {
+                max-width: 13.4rem;
+                min-width: 11.4rem;
+            }
+        }
+    }
+}
+
+@keyframes fadeInTopModal {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}

@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
-        "prod": "webpack --mode production",
+        "prod": "webpack --config ./webpack.config.js --mode production",
         "lint": "eslint '*.{js,json}' --fix",
         "prettier": "prettier --write .",
         "lint-staged": "lint-staged"
@@ -24,6 +24,8 @@
     "devDependencies": {
         "@babel/core": "^7.22.9",
         "@babel/preset-env": "^7.22.9",
+        "@fullcalendar/core": "^6.1.8",
+        "@fullcalendar/daygrid": "^6.1.8",
         "babel-loader": "^9.1.3",
         "clean-webpack-plugin": "^4.0.0",
         "css-loader": "^6.8.1",
@@ -33,6 +35,7 @@
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-prettier": "^5.0.0",
+        "hammerjs": "^2.0.8",
         "html-webpack-plugin": "^5.5.3",
         "husky": "^8.0.3",
         "jquery": "^3.7.0",
@@ -53,5 +56,8 @@
         "hooks": {
             "pre-commit": "npm run lint-staged"
         }
+    },
+    "dependencies": {
+        "moment": "^2.29.4"
     }
 }

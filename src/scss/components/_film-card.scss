@@ -1,18 +1,20 @@
 .film-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     max-width: 70rem;
-    height: 100%;
     padding-block: 3rem;
-
-    &:not(:first-of-type) {
-        border-top: 0.2rem solid $c_gray_secondary;
-    }
 
     @include sm {
         flex-direction: row;
-        height: max-content;
+    }
+
+    &__remove-btn {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.2rem;
+        display: flex;
     }
 
     &__head {
@@ -20,7 +22,9 @@
         width: 100%;
         max-width: 20.4rem;
         height: auto;
+        aspect-ratio: 11/17;
         margin-inline: auto;
+        background-color: $c_gray_secondary;
 
         @include sm {
             max-width: 15.4rem;
@@ -31,6 +35,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
+            z-index: 1;
             display: flex;
             padding-bottom: 1rem;
             padding-left: 1rem;
@@ -44,23 +49,44 @@
                     display: none;
                 }
             }
+
+            &disabled {
+                pointer-events: none;
+            }
         }
 
         .film-card__bookmark-btn {
             position: absolute;
             right: 0;
             bottom: 0;
+            z-index: 1;
             display: flex;
             padding-bottom: 1rem;
             padding-right: 1rem;
         }
 
+        &__gradiant {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5.5rem;
+            background: rgb(0, 0, 0);
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.47524947478991597) 29%,
+                rgba(0, 0, 0, 0.5424763655462185) 61%,
+                rgba(0, 0, 0, 1) 100%
+            );
+        }
+
         &__img {
             width: 100%;
-            aspect-ratio: 11/17;
-            background-color: $c_gray_secondary;
+            object-fit: cover;
         }
     }
+
     &__body {
         display: flex;
         flex-direction: column;
