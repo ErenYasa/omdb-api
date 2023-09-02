@@ -54,6 +54,7 @@ export async function makeSearch(filmTitle, container, searchBarInput, searchSug
     addedFavFilmControl();
     /*  */
   } catch (error) {
+    $('.suggestions__btn').remove();
     searchSuggestionsList.html(NoData('SOMETHING WENT WRONG.'));
     console.error(error);
   } finally {
