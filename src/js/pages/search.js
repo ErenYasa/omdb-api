@@ -48,7 +48,6 @@ export default function Search() {
       // #endregion
     });
     // #endregion
-    console.log('first');
 
     // #region DAHA FAZLA SONUÇ GÖSTER BUTON EVENT
     moreResultBtn.on('click', e => {
